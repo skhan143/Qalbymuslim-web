@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qalby Muslim - Islamic Companion</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Sidebar Navigation -->
+    <div class="sidebar">
+        <div class="logo">
+            <i class="fas fa-mosque"></i>
+            <h2>Qalby Muslim</h2>
+        </div>
+        <nav class="nav-menu">
+            <a href="#dashboard" class="nav-item active">
+                <i class="fas fa-th-large"></i>
+                <span>Dashboard</span>
+            </a>
+            <a href="#prayer-times" class="nav-item">
+                <i class="fas fa-prayer-hands"></i>
+                <span>Prayer Times</span>
+            </a>
+            <a href="#quran" class="nav-item">
+                <i class="fas fa-book-quran"></i>
+                <span>Quran</span>
+            </a>
+            <a href="#qibla" class="nav-item">
+                <i class="fas fa-compass"></i>
+                <span>Qibla Direction</span>
+            </a>
+            <a href="#tasbih" class="nav-item">
+                <i class="fas fa-hands-praying"></i>
+                <span>Tasbih Counter</span>
+            </a>
+            <a href="#calendar" class="nav-item">
+                <i class="fas fa-calendar-alt"></i>
+                <span>Islamic Calendar</span>
+            </a>
+            <a href="#settings" class="nav-item">
+                <i class="fas fa-cog"></i>
+                <span>Settings</span>
+            </a>
+        </nav>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-left">
+                <button class="menu-toggle" id="menuToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <h1>Welcome to Qalby Muslim</h1>
+            </div>
+            <div class="header-right">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search...">
+                </div>
+                <div class="location-selector">
+                    <i class="fas fa-location-dot"></i>
+                    <span id="userLocation">Detecting location...</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Dashboard Content -->
+        <div class="content-wrapper">
+            <!-- Time and Date Cards -->
+            <div class="time-section">
+                <div class="card time-card">
+                    <div class="card-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3>Current Time</h3>
+                        <div class="time-display" id="currentTime">00:00:00</div>
+                    </div>
+                </div>
+                <div class="card date-card">
+                    <div class="card-icon">
+                        <i class="fas fa-calendar"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3>Gregorian Date</h3>
+                        <div class="date-display" id="gregorianDate">Loading...</div>
+                    </div>
+                </div>
+                <div class="card hijri-card">
+                    <div class="card-icon">
+                        <i class="fas fa-moon"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3>Islamic Date</h3>
+                        <div class="date-display" id="hijriDate">Loading...</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Prayer Times Section -->
+            <div class="prayer-times-section">
+                <div class="card prayer-times-card">
+                    <div class="card-header">
+                        <h2>
+                            <i class="fas fa-prayer-hands"></i>
+                            Today's Prayer Times
+                        </h2>
+                        <div class="next-prayer-badge" id="nextPrayerBadge">
+                            Next: Loading...
+                        </div>
+                    </div>
+                    <div class="prayer-times-grid" id="prayerTimesGrid">
+                        <div class="prayer-time-item">
+                            <div class="prayer-icon">
+                                <i class="fas fa-sun"></i>
+                            </div>
+                            <div class="prayer-info">
+                                <h4>Fajr</h4>
+                                <p class="prayer-time" id="fajrTime">--:--</p>
+                            </div>
+                        </div>
+                        <div class="prayer-time-item">
+                            <div class="prayer-icon">
+                                <i class="fas fa-sunrise"></i>
+                            </div>
+                            <div class="prayer-info">
+                                <h4>Sunrise</h4>
+                                <p class="prayer-time" id="sunriseTime">--:--</p>
+                            </div>
+                        </div>
+                        <div class="prayer-time-item">
+                            <div class="prayer-icon">
+                                <i class="fas fa-sun"></i>
+                            </div>
+                            <div class="prayer-info">
+                                <h4>Dhuhr</h4>
+                                <p class="prayer-time" id="dhuhrTime">--:--</p>
+                            </div>
+                        </div>
+                        <div class="prayer-time-item">
+                            <div class="prayer-icon">
+                                <i class="fas fa-cloud-sun"></i>
+                            </div>
+                            <div class="prayer-info">
+                                <h4>Asr</h4>
+                                <p class="prayer-time" id="asrTime">--:--</p>
+                            </div>
+                        </div>
+                        <div class="prayer-time-item">
+                            <div class="prayer-icon">
+                                <i class="fas fa-sunset"></i>
+                            </div>
+                            <div class="prayer-info">
+                                <h4>Maghrib</h4>
+                                <p class="prayer-time" id="maghribTime">--:--</p>
+                            </div>
+                        </div>
+                        <div class="prayer-time-item">
+                            <div class="prayer-icon">
+                                <i class="fas fa-moon"></i>
+                            </div>
+                            <div class="prayer-info">
+                                <h4>Isha</h4>
+                                <p class="prayer-time" id="ishaTime">--:--</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Actions and Features -->
+            <div class="features-grid">
+                <div class="card feature-card">
+                    <div class="feature-icon quran-icon">
+                        <i class="fas fa-book-quran"></i>
+                    </div>
+                    <h3>Read Quran</h3>
+                    <p>Access the Holy Quran with translation and recitation</p>
+                    <button class="btn-primary">Start Reading</button>
+                </div>
+                <div class="card feature-card">
+                    <div class="feature-icon tasbih-icon">
+                        <i class="fas fa-hands-praying"></i>
+                    </div>
+                    <h3>Tasbih Counter</h3>
+                    <p>Keep track of your dhikr and tasbeeh</p>
+                    <button class="btn-primary">Open Counter</button>
+                </div>
+                <div class="card feature-card">
+                    <div class="feature-icon qibla-icon">
+                        <i class="fas fa-compass"></i>
+                    </div>
+                    <h3>Qibla Finder</h3>
+                    <p>Find the direction of Kaaba from your location</p>
+                    <button class="btn-primary">Find Direction</button>
+                </div>
+                <div class="card feature-card">
+                    <div class="feature-icon dua-icon">
+                        <i class="fas fa-hands"></i>
+                    </div>
+                    <h3>Daily Duas</h3>
+                    <p>Collection of authentic Islamic supplications</p>
+                    <button class="btn-primary">View Duas</button>
+                </div>
+            </div>
+
+            <!-- Statistics Section -->
+            <div class="stats-section">
+                <div class="card stats-card">
+                    <h3>Your Activity</h3>
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <i class="fas fa-check-circle"></i>
+                            <div class="stat-value">0</div>
+                            <div class="stat-label">Prayers Completed Today</div>
+                        </div>
+                        <div class="stat-item">
+                            <i class="fas fa-book-open"></i>
+                            <div class="stat-value">0</div>
+                            <div class="stat-label">Quran Pages Read</div>
+                        </div>
+                        <div class="stat-item">
+                            <i class="fas fa-hand-holding-heart"></i>
+                            <div class="stat-value">0</div>
+                            <div class="stat-label">Dhikr Count</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- App Download Section -->
+            <div class="card download-section">
+                <div class="download-content">
+                    <div class="download-text">
+                        <h2>Download Qalby Muslim Mobile App</h2>
+                        <p>Get the complete Islamic companion on your mobile device</p>
+                        <div class="app-badges">
+                            <a href="https://apps.apple.com/ua/app/qalby-muslim/id6753021182" target="_blank" class="app-badge">
+                                <i class="fab fa-apple"></i>
+                                <div>
+                                    <span class="badge-small">Download on the</span>
+                                    <span class="badge-large">App Store</span>
+                                </div>
+                            </a>
+                            <a href="#" class="app-badge">
+                                <i class="fab fa-google-play"></i>
+                                <div>
+                                    <span class="badge-small">GET IT ON</span>
+                                    <span class="badge-large">Google Play</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="download-image">
+                        <i class="fas fa-mobile-screen-button"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>&copy; 2024 Qalby Muslim. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Contact Us</a>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
