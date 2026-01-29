@@ -52,7 +52,7 @@
         <!-- Header -->
         <header class="header">
             <div class="header-left">
-                <button class="menu-toggle" id="menuToggle">
+                <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu">
                     <i class="fas fa-bars"></i>
                 </button>
                 <h1>Welcome to Qalby Muslim</h1>
@@ -60,7 +60,7 @@
             <div class="header-right">
                 <div class="search-box">
                     <i class="fas fa-search"></i>
-                    <input type="text" placeholder="Search...">
+                    <input type="text" placeholder="Search..." aria-label="Search" maxlength="100">
                 </div>
                 <div class="location-selector">
                     <i class="fas fa-location-dot"></i>
@@ -240,20 +240,20 @@
                         <h2>Download Qalby Muslim Mobile App</h2>
                         <p>Get the complete Islamic companion on your mobile device</p>
                         <div class="app-badges">
-                            <a href="https://apps.apple.com/ua/app/qalby-muslim/id6753021182" target="_blank" class="app-badge">
+                            <a href="https://apps.apple.com/ua/app/qalby-muslim/id6753021182" target="_blank" class="app-badge" aria-label="Download Qalby Muslim on the App Store">
                                 <i class="fab fa-apple"></i>
                                 <div>
                                     <span class="badge-small">Download on the</span>
                                     <span class="badge-large">App Store</span>
                                 </div>
                             </a>
-                            <a href="#" class="app-badge">
+                            <div class="app-badge coming-soon" aria-label="Coming soon on Google Play">
                                 <i class="fab fa-google-play"></i>
                                 <div>
-                                    <span class="badge-small">GET IT ON</span>
+                                    <span class="badge-small">COMING SOON</span>
                                     <span class="badge-large">Google Play</span>
                                 </div>
-                            </a>
+                            </div>
                         </div>
                     </div>
                     <div class="download-image">
@@ -265,11 +265,11 @@
 
         <!-- Footer -->
         <footer class="footer">
-            <p>&copy; 2024 Qalby Muslim. All rights reserved.</p>
+            <p>&copy; <span id="currentYear">2024</span> Qalby Muslim. All rights reserved.</p>
             <div class="footer-links">
-                <a href="#">Privacy Policy</a>
-                <a href="#">Terms of Service</a>
-                <a href="#">Contact Us</a>
+                <a href="#" onclick="alert('Privacy Policy page coming soon'); return false;">Privacy Policy</a>
+                <a href="#" onclick="alert('Terms of Service page coming soon'); return false;">Terms of Service</a>
+                <a href="#" onclick="alert('Contact: info@qalbymuslim.com'); return false;">Contact Us</a>
             </div>
         </footer>
     </div>

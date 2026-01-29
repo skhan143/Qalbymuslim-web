@@ -496,6 +496,16 @@ body {
     transform: translateY(-2px);
 }
 
+.app-badge.coming-soon {
+    opacity: 0.6;
+    cursor: default;
+}
+
+.app-badge.coming-soon:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+    transform: none;
+}
+
 .app-badge i {
     font-size: 32px;
 }

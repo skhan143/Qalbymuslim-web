@@ -65,8 +65,10 @@ function updateHijriDate() {
             'Jumada al-Awwal', 'Jumada al-Thani', 'Rajab', 'Shaban',
             'Ramadan', 'Shawwal', 'Dhul-Qadah', 'Dhul-Hijjah'
         ];
-        const monthIndex = Math.floor(Math.random() * 12); // Simplified - use proper calculation
-        const day = Math.floor(Math.random() * 29) + 1; // Simplified
+        // Simple approximation based on current date
+        const dayOfYear = Math.floor((now - new Date(now.getFullYear(), 0, 0)) / (1000 * 60 * 60 * 24));
+        const monthIndex = Math.floor((dayOfYear % 354) / 29.5) % 12;
+        const day = Math.floor((dayOfYear % 354) % 29.5) + 1;
         hijriElement.textContent = `${day} ${hijriMonths[monthIndex]} ${hijriYear}`;
     }
 }
@@ -102,7 +104,12 @@ function getUserLocation() {
 
 // Calculate prayer times (simplified calculation)
 function calculatePrayerTimes(latitude, longitude) {
-    // This is a simplified version. For production, use a proper library like adhan-js or PrayTimes
+    // NOTE: This is a simplified version with sample times for demonstration
+    // For production, integrate a proper library like:
+    // - adhan-js: https://github.com/batoulapps/adhan-js
+    // - Aladhan API: https://aladhan.com/prayer-times-api
+    // These will provide accurate prayer times based on location and calculation method
+    
     const now = new Date();
     const baseTime = new Date(now.getFullYear(), now.getMonth(), now.getDate());
     
@@ -199,13 +206,16 @@ document.addEventListener('DOMContentLoaded', () => {
     updateGregorianDate();
     updateHijriDate();
     
+    // Update copyright year
+    const yearElement = document.getElementById('currentYear');
+    if (yearElement) {
+        yearElement.textContent = new Date().getFullYear();
+    }
+    
     // Get location and calculate prayer times
     getUserLocation();
     
-    // Update prayer times every minute
-    setInterval(() => {
-        getUserLocation();
-    }, 60000);
+    // Note: Prayer times are calculated once per day, no need to refresh constantly
     
     // Add smooth scroll to anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -245,21 +255,6 @@ document.querySelectorAll('a[href="#"]').forEach(link => {
     });
 });
 
-// Add loading state management
-function showLoading(elementId) {
-    const element = document.getElementById(elementId);
-    if (element) {
-        element.classList.add('loading');
-    }
-}
-
-function hideLoading(elementId) {
-    const element = document.getElementById(elementId);
-    if (element) {
-        element.classList.remove('loading');
-    }
-}
-
 // Service Worker registration (for PWA support in future)
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
@@ -270,14 +265,4 @@ if ('serviceWorker' in navigator) {
         //     console.log('SW registration failed:', error);
         // });
     });
-}
-
-// Export functions for testing (if needed)
-if (typeof module !== 'undefined' && module.exports) {
-    module.exports = {
-        updateCurrentTime,
-        updateGregorianDate,
-        updateHijriDate,
-        calculatePrayerTimes
-    };
 }
