@@ -8,7 +8,32 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body>
+<body data-barba="wrapper">
+    <!-- Liquid background (SVG with turbulence/displacement) -->
+    <svg class="liquid-bg" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+        <defs>
+            <filter id="liquidFilter">
+                <feTurbulence id="liquidTurbulence" type="fractalNoise" baseFrequency="0.012" numOctaves="3" seed="2" result="noise"/>
+                <feDisplacementMap id="liquidDisplace" in="SourceGraphic" in2="noise" scale="30" xChannelSelector="R" yChannelSelector="G"/>
+            </filter>
+            <linearGradient id="goldGradient" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#D4AF37" stop-opacity="0.18"/>
+                <stop offset="50%" stop-color="#C9A646" stop-opacity="0.14"/>
+                <stop offset="100%" stop-color="#000000" stop-opacity="0.0"/>
+            </linearGradient>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#goldGradient)" filter="url(#liquidFilter)"/>
+    </svg>
+
+    <!-- Stars background -->
+    <div class="stars-bg" aria-hidden="true">
+        <canvas id="starsCanvas"></canvas>
+    </div>
+    <!-- Page Transition Overlay -->
+    <div id="pageTransition" class="page-transition" aria-hidden="true">
+        <div class="page-transition__bg"></div>
+    </div>
+
     <!-- Sidebar Navigation -->
     <div class="sidebar">
         <div class="logo">
@@ -44,11 +69,23 @@
                 <i class="fas fa-cog"></i>
                 <span>Settings</span>
             </a>
+            <a href="#services" class="nav-item">
+                <i class="fas fa-utensils"></i>
+                <span>Services</span>
+            </a>
+            <a href="privacy-policy.html" class="nav-item">
+                <i class="fas fa-shield-alt"></i>
+                <span>Privacy Policy</span>
+            </a>
+            <a href="#donate" class="nav-item">
+                <i class="fas fa-hand-holding-heart"></i>
+                <span>Donate</span>
+            </a>
         </nav>
     </div>
 
     <!-- Main Content -->
-    <div class="main-content">
+    <div class="main-content" data-barba="container" data-barba-namespace="home">
         <!-- Header -->
         <header class="header">
             <div class="header-left">
@@ -71,9 +108,29 @@
 
         <!-- Dashboard Content -->
         <div class="content-wrapper">
+            <!-- Hero -->
+            <div class="card glass-surface reveal hero-section" data-parallax="0.02" aria-label="Qalby Muslim app preview">
+                <div>
+                    <h1 class="hero-title">Your Faith, Simplified</h1>
+                    <p class="hero-subtitle">Stay connected with prayer times, Qibla compass, Quran, and daily reminders — all in one place.</p>
+                    <div class="hero-ctas">
+                        <a href="https://apps.apple.com/us/app/qalbymuslim/id6753021182" target="_blank" class="btn-primary magnetic" aria-label="Download Qalby Muslim on iOS">Download — iOS</a>
+                        <a href="https://play.google.com/store/apps/details?id=com.qalbymuslim.app&hl=en-US" target="_blank" class="btn-secondary" aria-label="Download Qalby Muslim on Google Play">Download — Android</a>
+                        <a href="#prayer-times" class="btn-secondary">Explore Features</a>
+                    </div>
+                </div>
+                 <div class="device" data-parallax="-0.05" aria-hidden="false"
+                     data-screen-top="5%" data-screen-bottom="5%" data-screen-left="5%" data-screen-right="5%">
+                    <div class="device-screen-wrap">
+                        <video class="device-screen" src="assets/hero-video.mp4" muted autoplay playsinline loop preload="metadata" poster="assets/hero-poster.svg"></video>
+                    </div>
+                    <div class="device-flare" aria-hidden="true"></div>
+                    <img class="device-frame" src="assets/iphone-14-frame.png" alt="" aria-hidden="true" />
+                </div>
+            </div>
             <!-- Time and Date Cards -->
             <div class="time-section">
-                <div class="card time-card">
+                <div class="card glass-card reveal time-card">
                     <div class="card-icon">
                         <i class="fas fa-clock"></i>
                     </div>
@@ -82,7 +139,7 @@
                         <div class="time-display" id="currentTime">00:00:00</div>
                     </div>
                 </div>
-                <div class="card date-card">
+                <div class="card glass-card reveal date-card">
                     <div class="card-icon">
                         <i class="fas fa-calendar"></i>
                     </div>
@@ -91,7 +148,7 @@
                         <div class="date-display" id="gregorianDate">Loading...</div>
                     </div>
                 </div>
-                <div class="card hijri-card">
+                <div class="card glass-card reveal hijri-card">
                     <div class="card-icon">
                         <i class="fas fa-moon"></i>
                     </div>
@@ -103,8 +160,8 @@
             </div>
 
             <!-- Prayer Times Section -->
-            <div class="prayer-times-section">
-                <div class="card prayer-times-card">
+            <div class="prayer-times-section" id="prayer-times">
+                <div class="card glass-card reveal prayer-times-card">
                     <div class="card-header">
                         <h2>
                             <i class="fas fa-prayer-hands"></i>
@@ -115,7 +172,7 @@
                         </div>
                     </div>
                     <div class="prayer-times-grid" id="prayerTimesGrid">
-                        <div class="prayer-time-item">
+                        <div class="prayer-time-item reveal">
                             <div class="prayer-icon">
                                 <i class="fas fa-sun"></i>
                             </div>
@@ -124,7 +181,7 @@
                                 <p class="prayer-time" id="fajrTime">--:--</p>
                             </div>
                         </div>
-                        <div class="prayer-time-item">
+                        <div class="prayer-time-item reveal">
                             <div class="prayer-icon">
                                 <i class="fas fa-sunrise"></i>
                             </div>
@@ -133,7 +190,7 @@
                                 <p class="prayer-time" id="sunriseTime">--:--</p>
                             </div>
                         </div>
-                        <div class="prayer-time-item">
+                        <div class="prayer-time-item reveal">
                             <div class="prayer-icon">
                                 <i class="fas fa-sun"></i>
                             </div>
@@ -142,7 +199,7 @@
                                 <p class="prayer-time" id="dhuhrTime">--:--</p>
                             </div>
                         </div>
-                        <div class="prayer-time-item">
+                        <div class="prayer-time-item reveal">
                             <div class="prayer-icon">
                                 <i class="fas fa-cloud-sun"></i>
                             </div>
@@ -151,7 +208,7 @@
                                 <p class="prayer-time" id="asrTime">--:--</p>
                             </div>
                         </div>
-                        <div class="prayer-time-item">
+                        <div class="prayer-time-item reveal">
                             <div class="prayer-icon">
                                 <i class="fas fa-sunset"></i>
                             </div>
@@ -160,7 +217,7 @@
                                 <p class="prayer-time" id="maghribTime">--:--</p>
                             </div>
                         </div>
-                        <div class="prayer-time-item">
+                        <div class="prayer-time-item reveal">
                             <div class="prayer-icon">
                                 <i class="fas fa-moon"></i>
                             </div>
@@ -174,44 +231,44 @@
             </div>
 
             <!-- Quick Actions and Features -->
-            <div class="features-grid">
-                <div class="card feature-card">
+            <div class="features-grid" id="features">
+                <div class="card glass-card reveal feature-card" data-parallax="0.05">
                     <div class="feature-icon quran-icon">
                         <i class="fas fa-book-quran"></i>
                     </div>
                     <h3>Read Quran</h3>
-                    <p>Access the Holy Quran with translation and recitation</p>
-                    <button class="btn-primary">Start Reading</button>
+                    <p>Access the Holy Quran with translation and recitation for guidance every day.</p>
+                    <button class="btn-primary magnetic">Start Reading</button>
                 </div>
-                <div class="card feature-card">
+                <div class="card glass-card reveal feature-card" data-parallax="0.05">
                     <div class="feature-icon tasbih-icon">
-                        <i class="fas fa-hands-praying"></i>
+                        <i class="fas fa-bell"></i>
                     </div>
-                    <h3>Tasbih Counter</h3>
-                    <p>Keep track of your dhikr and tasbeeh</p>
-                    <button class="btn-primary">Open Counter</button>
+                    <h3>Daily Reminders</h3>
+                    <p>Set daily reminders for prayers, Surah Mulk, and zakat calculations effortlessly.</p>
+                    <button class="btn-primary magnetic">Configure Reminders</button>
                 </div>
-                <div class="card feature-card">
+                <div class="card glass-card reveal feature-card" data-parallax="0.05">
                     <div class="feature-icon qibla-icon">
                         <i class="fas fa-compass"></i>
                     </div>
                     <h3>Qibla Finder</h3>
-                    <p>Find the direction of Kaaba from your location</p>
-                    <button class="btn-primary">Find Direction</button>
+                    <p>Find the precise direction of Qibla easily with our intuitive compass.</p>
+                    <button class="btn-primary magnetic">Find Direction</button>
                 </div>
-                <div class="card feature-card">
+                <div class="card glass-card reveal feature-card" data-parallax="0.05">
                     <div class="feature-icon dua-icon">
                         <i class="fas fa-hands"></i>
                     </div>
-                    <h3>Daily Duas</h3>
-                    <p>Collection of authentic Islamic supplications</p>
-                    <button class="btn-primary">View Duas</button>
+                    <h3>Tasbih Counter</h3>
+                    <p>Keep track of your dhikr and tasbeeh with a simple, mindful counter.</p>
+                    <button class="btn-primary magnetic">View Duas</button>
                 </div>
             </div>
 
             <!-- Statistics Section -->
             <div class="stats-section">
-                <div class="card stats-card">
+                <div class="card glass-card reveal stats-card">
                     <h3>Your Activity</h3>
                     <div class="stats-grid">
                         <div class="stat-item">
@@ -234,7 +291,7 @@
             </div>
 
             <!-- App Download Section -->
-            <div class="card download-section">
+            <div class="card glass-surface reveal download-section" data-parallax="0.03">
                 <div class="download-content">
                     <div class="download-text">
                         <h2>Download Qalby Muslim Mobile App</h2>
@@ -247,32 +304,104 @@
                                     <span class="badge-large">App Store</span>
                                 </div>
                             </a>
-                            <div class="app-badge coming-soon" aria-label="Coming soon on Google Play">
+                            <a href="https://play.google.com/store/apps/details?id=com.qalbymuslim.app&hl=en-US" target="_blank" class="app-badge" aria-label="Download Qalby Muslim on Google Play">
                                 <i class="fab fa-google-play"></i>
                                 <div>
-                                    <span class="badge-small">COMING SOON</span>
+                                    <span class="badge-small">GET IT ON</span>
                                     <span class="badge-large">Google Play</span>
                                 </div>
-                            </div>
+                            </a>
                         </div>
                     </div>
-                    <div class="download-image">
+                    <div class="download-image" data-parallax="-0.08">
                         <i class="fas fa-mobile-screen-button"></i>
                     </div>
                 </div>
             </div>
+
+            <!-- Services Section -->
+            <section id="services" class="reveal">
+                <div class="card glass-card">
+                    <div class="section-divider"></div>
+                    <div class="card-header">
+                        <h2><i class="fas fa-utensils"></i> Services — Halal Eats</h2>
+                    </div>
+                    <p>Discover Zabiha Halal Restaurants Near You. Explore featured halal restaurants, read reviews, and add your restaurant to the directory.</p>
+                    <div class="features-grid" style="margin-top:16px;">
+                        <div class="card glass-card feature-card">
+                            <div class="feature-icon"><i class="fas fa-store"></i></div>
+                            <h3>About</h3>
+                            <p>Find nearby Zabiha Halal dining options with trusted quality.</p>
+                            <a href="https://tally.so/r/mKEDQk" target="_blank" class="btn-secondary">Add Your Restaurant</a>
+                        </div>
+                        <div class="card glass-card feature-card">
+                            <div class="feature-icon"><i class="fas fa-images"></i></div>
+                            <h3>Gallery</h3>
+                            <p>Browse featured halal restaurants and dishes.</p>
+                        </div>
+                        <div class="card glass-card feature-card">
+                            <div class="feature-icon"><i class="fas fa-comments"></i></div>
+                            <h3>Reviews</h3>
+                            <p>See what customers say about their halal dining experiences.</p>
+                        </div>
+                        <div class="card glass-card feature-card">
+                            <div class="feature-icon"><i class="fas fa-project-diagram"></i></div>
+                            <h3>Projects</h3>
+                            <p>Explore featured restaurants and initiatives.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Donate Section -->
+            <section id="donate" class="reveal">
+                <div class="card glass-card">
+                    <div class="section-divider"></div>
+                    <div class="card-header">
+                        <h2><i class="fas fa-hand-holding-heart"></i> Support Qalby Muslim</h2>
+                        <a href="https://donate.stripe.com/7sY28r3Mhd1U8fD3SxeEo00" target="_blank" class="btn-primary magnetic">Donate Now</a>
+                    </div>
+                    <p>Support Qalby Muslim and make a difference today! Your donation helps us improve services and reach more of the community.</p>
+                    <div class="features-grid" style="margin-top:16px;">
+                        <div class="card glass-card feature-card">
+                            <h3>FAQ</h3>
+                            <p><strong>What is Qalby?</strong> Qalby supports the Muslim community.</p>
+                            <p><strong>How to donate?</strong> Visit our donation page to contribute.</p>
+                            <p><strong>Is my donation secure?</strong> Yes, we use Stripe for secure transactions.</p>
+                            <p><strong>Can I donate monthly?</strong> Yes, monthly donations are welcome.</p>
+                        </div>
+                        <div class="card glass-card feature-card">
+                            <h3>Contact</h3>
+                            <p>Email: <a href="mailto:qalbymuslim1@gmail.com">qalbymuslim1@gmail.com</a></p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
         </div>
 
         <!-- Footer -->
         <footer class="footer">
-            <p>&copy; <span id="currentYear">2024</span> Qalby Muslim. All rights reserved.</p>
+            <p>&copy; <span id="currentYear">2026</span> Qalby Muslim. All rights reserved.</p>
+            <div class="social-links">
+                <a href="https://www.facebook.com/share/17txgaBVw7/?mibextid=wwXIfr" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.instagram.com/qalby_muslim/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.tiktok.com/@qalbymuslim0?_r=1&_t=ZT-93UacYQA3pN" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                <a href="https://x.com/" target="_blank" aria-label="X"><i class="fab fa-x-twitter"></i></a>
+            </div>
             <div class="footer-links">
-                <a href="#" onclick="alert('Privacy Policy page coming soon'); return false;">Privacy Policy</a>
+                <a href="privacy-policy.html">Privacy Policy</a>
                 <a href="#" onclick="alert('Terms of Service page coming soon'); return false;">Terms of Service</a>
-                <a href="#" onclick="alert('Contact: info@qalbymuslim.com'); return false;">Contact Us</a>
+                <a href="#" onclick="alert('Contact: qalbymuslim1@gmail.com'); return false;">Contact Us</a>
             </div>
         </footer>
     </div>
+
+    <!-- Animations: GSAP + ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha512-+e7pP3vG5oQKPDe6O8oQmP3lOaZzV0zq4u3gYpOeU3fMZkQqvYb4eH3tK1gH0bR8HcGdZp9k0oQeTnS2oHk8jw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" integrity="sha512-+2Vg31YHkA8w7LwUu0nKjQW+0W8mI3rYQ1cV9lRjL3CqgX2f1bG1R6bWkzF0Y2h7E2mU4tVw0uVbFf2yA+Z2Vw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- Barba.js for page transitions -->
+    <script src="https://unpkg.com/@barba/core"></script>
 
     <script src="script.js"></script>
 </body>

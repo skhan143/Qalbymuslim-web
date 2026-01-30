@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Qalby Muslim</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .privacy-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .privacy-header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding: 40px 0;
+            border-bottom: 2px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .privacy-header h1 {
+            font-size: 48px;
+            font-weight: 700;
+            background: linear-gradient(90deg, #F5F5F5 0%, #D4AF37 50%, #F5F5F5 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 10px;
+            background-size: 200% 100%;
+        }
+
+        .privacy-header p {
+            color: var(--text-secondary);
+            font-size: 16px;
+        }
+
+        .privacy-content {
+            line-height: 1.8;
+            color: var(--text-primary);
+        }
+
+        .privacy-content h2 {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-top: 40px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .privacy-content h2::before {
+            content: '';
+            width: 4px;
+            height: 28px;
+            background: linear-gradient(180deg, var(--primary-color), rgba(212, 175, 55, 0.4));
+            border-radius: 2px;
+        }
+
+        .privacy-content h3 {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-top: 24px;
+            margin-bottom: 12px;
+        }
+
+        .privacy-content p {
+            margin-bottom: 16px;
+            color: var(--text-secondary);
+            font-size: 16px;
+        }
+
+        .privacy-content ul,
+        .privacy-content ol {
+            margin: 16px 0 16px 24px;
+            color: var(--text-secondary);
+        }
+
+        .privacy-content li {
+            margin-bottom: 12px;
+            line-height: 1.7;
+        }
+
+        .privacy-content li strong {
+            color: var(--primary-color);
+        }
+
+        .quick-summary {
+            background: rgba(212, 175, 55, 0.08);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 12px;
+            padding: 24px;
+            margin: 30px 0;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .quick-summary h3 {
+            margin-top: 0;
+        }
+
+        .quick-summary ul {
+            margin: 12px 0 0 24px;
+        }
+
+        .quick-summary li {
+            margin-bottom: 10px;
+            font-size: 15px;
+        }
+
+        .section-divider {
+            height: 2px;
+            background: linear-gradient(90deg, rgba(212,175,55,0), rgba(212,175,55,0.5), rgba(212,175,55,0));
+            margin: 40px 0;
+            opacity: 0.6;
+        }
+
+        .contact-card {
+            background: rgba(255, 255, 255, 0.04);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 12px;
+            padding: 28px;
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .contact-card h3 {
+            margin-top: 0;
+            margin-bottom: 16px;
+        }
+
+        .contact-card p {
+            margin: 12px 0;
+        }
+
+        .contact-card a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .contact-card a:hover {
+            text-decoration: underline;
+            color: #E8C547;
+        }
+
+        .highlight {
+            background: rgba(212, 175, 55, 0.12);
+            padding: 2px 6px;
+            border-radius: 4px;
+            color: var(--primary-color);
+            font-weight: 500;
+        }
+
+        .back-to-home {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
+        }
+
+        .back-to-home:hover {
+            gap: 12px;
+            color: #E8C547;
+        }
+
+        @media (max-width: 768px) {
+            .privacy-header h1 {
+                font-size: 32px;
+            }
+
+            .privacy-content h2 {
+                font-size: 22px;
+            }
+
+            .privacy-content h3 {
+                font-size: 18px;
+            }
+
+            .privacy-container {
+                padding: 20px 16px;
+            }
+
+            .contact-card {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="logo">
+            <i class="fas fa-moon"></i>
+            <h2>Qalby Muslim</h2>
+        </div>
+        <nav class="nav-menu">
+            <a href="index.html" class="nav-item">
+                <i class="fas fa-home"></i>
+                <span>Home</span>
+            </a>
+            <a href="#" class="nav-item">
+                <i class="fas fa-gauge"></i>
+                <span>Dashboard</span>
+            </a>
+            <a href="#" class="nav-item">
+                <i class="fas fa-clock"></i>
+                <span>Prayer Times</span>
+            </a>
+            <a href="#" class="nav-item">
+                <i class="fas fa-quran"></i>
+                <span>Quran</span>
+            </a>
+            <a href="#" class="nav-item">
+                <i class="fas fa-compass"></i>
+                <span>Qibla</span>
+            </a>
+            <a href="#" class="nav-item">
+                <i class="fas fa-hands-praying"></i>
+                <span>Tasbih</span>
+            </a>
+            <a href="#" class="nav-item">
+                <i class="fas fa-calendar"></i>
+                <span>Calendar</span>
+            </a>
+            <a href="#" class="nav-item">
+                <i class="fas fa-cog"></i>
+                <span>Settings</span>
+            </a>
+            <a href="#" class="nav-item">
+                <i class="fas fa-wrench"></i>
+                <span>Services</span>
+            </a>
+            <a href="privacy-policy.html" class="nav-item active">
+                <i class="fas fa-shield"></i>
+                <span>Privacy Policy</span>
+            </a>
+        </nav>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Header -->
+        <div class="header">
+            <div class="header-left">
+                <button class="menu-toggle" id="menuToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <h1>Privacy Policy</h1>
+            </div>
+            <div class="header-right">
+                <i class="fas fa-bell"></i>
+            </div>
+        </div>
+
+        <!-- Content Wrapper -->
+        <div class="content-wrapper">
+            <a href="index.html" class="back-to-home">
+                <i class="fas fa-arrow-left"></i>
+                Back to Home
+            </a>
+
+            <div class="privacy-container">
+                <!-- Header -->
+                <div class="privacy-header">
+                    <h1>Privacy Policy</h1>
+                    <p>For Qalby Muslim</p>
+                    <p style="font-size: 14px; margin-top: 10px;">Last updated: October 23, 2025</p>
+                </div>
+
+                <!-- Content -->
+                <div class="privacy-content">
+                    <p style="margin-bottom: 30px;">Qalby Muslim ("we", "us", or "the App") provides tools such as daily prayer times, Qibla direction, Quran reading, reminders, and other Islamic utilities. This Privacy Policy explains what personal data we collect, how we use it, the choices you have, and how you can contact us. Protecting your privacy is a core part of how we build Qalby Muslim.</p>
+
+                    <p style="margin-bottom: 30px;">If you have any questions about this policy or how we process personal data, you can reach us at <span class="highlight">qalbymuslim1@gmail.com</span>.</p>
+
+                    <div class="section-divider"></div>
+
+                    <!-- Quick Summary -->
+                    <div class="quick-summary">
+                        <h3><i class="fas fa-lightning"></i> Quick Summary</h3>
+                        <ul>
+                            <li><strong>Data controller:</strong> Qalbymuslim — contact: qalbymuslim1@gmail.com</li>
+                            <li><strong>Data we collect:</strong> Location (with consent), optional calendar access, notification tokens, limited device/diagnostic data, support messages, anonymized analytics/crash reports, and any information you voluntarily share.</li>
+                            <li><strong>Why we collect it:</strong> To deliver app features, send reminders you enable, improve performance, respond to support, and comply with legal obligations.</li>
+                            <li><strong>Sharing:</strong> We do not sell personal data or share it with data brokers. We only share data with processors required to provide app functionality.</li>
+                            <li><strong>Retention:</strong> Most information stays on your device. Other data is kept only as long as needed or until you request deletion, subject to legal requirements.</li>
+                            <li><strong>Your rights:</strong> Adjust permissions on your device, request access or deletion via email, and exercise GDPR/CCPA rights where applicable.</li>
+                        </ul>
+                    </div>
+
+                    <div class="section-divider"></div>
+
+                    <!-- Who We Are -->
+                    <h2><i class="fas fa-info-circle"></i> Who We Are</h2>
+                    <p>Qalbymuslim is the data controller responsible for Qalby Muslim. Contact us at <span class="highlight">qalbymuslim1@gmail.com</span> for any privacy questions or to submit access, correction, or deletion requests. Please include "Privacy Request" in the subject line so we can respond quickly.</p>
+
+                    <div class="section-divider"></div>
+
+                    <!-- Information We Collect -->
+                    <h2><i class="fas fa-database"></i> Information We Collect</h2>
+                    <p>We only collect information that is necessary to provide, secure, and improve Qalby Muslim.</p>
+
+                    <h3>Location (optional)</h3>
+                    <ul>
+                        <li>Used to calculate prayer times and the Qibla direction for your location.</li>
+                        <li>Requested only when you initiate a location-based feature and with your explicit permission.</li>
+                    </ul>
+                    <p><strong>Note on local storage:</strong> We persist the most recent coordinates on the device (AsyncStorage) to support background refresh of prayer times. These stored coordinates are used locally and are not uploaded except when we call the third-party services listed in "Sharing & Third-Party Processing".</p>
+
+                    <h3>Notification Token</h3>
+                    <ul>
+                        <li>Generated by your device when you enable push notifications.</li>
+                        <li>Stored with our push provider (Expo Notifications/EAS, Apple APNs, or Google FCM) so we can deliver reminders you turn on.</li>
+                    </ul>
+
+                    <h3>Calendar Access (optional)</h3>
+                    <ul>
+                        <li>Used only if you choose to add prayer or reminder events to your personal calendar.</li>
+                        <li>Events are created at your direction; we do not access or sync existing calendar entries.</li>
+                    </ul>
+
+                    <h3>Device & Diagnostic Data</h3>
+                    <ul>
+                        <li>Includes device type, operating system, app version, IP address (where required), crash logs, and limited usage statistics.</li>
+                        <li>Helps us diagnose issues, combat fraud, and understand how features perform.</li>
+                    </ul>
+
+                    <h3>Website Cookies & Device Information</h3>
+                    <ul>
+                        <li>When you visit qalbymuslim.com, we may collect browser type, time zone, IP address, and cookies to secure the site and remember preferences.</li>
+                        <li>You can disable cookies through your browser, though some site functionality may break.</li>
+                    </ul>
+
+                    <h3>Support Requests</h3>
+                    <p>When you contact us, we receive the name, email, and message you provide to resolve your inquiry.</p>
+
+                    <h3>Analytics & Crash Reporting (optional)</h3>
+                    <p>Privacy-minded tools (e.g., Firebase Analytics, Sentry) may capture pseudonymized usage data and crash reports. Where required by law, we request consent before enabling analytics. This build does not include analytics or crash-reporting SDKs by default.</p>
+
+                    <h3>Other Information You Voluntarily Provide</h3>
+                    <p>Additional details submitted via feedback forms, surveys, or donations are processed only for their stated purpose.</p>
+
+                    <h3>Information We Do Not Collect</h3>
+                    <ul>
+                        <li>We do not require account sign-ups, payment card numbers, government IDs, or other sensitive personal data.</li>
+                    </ul>
+
+                    <div class="section-divider"></div>
+
+                    <!-- How We Use Your Information -->
+                    <h2><i class="fas fa-chart-line"></i> How We Use Your Information</h2>
+                    <ul>
+                        <li>Deliver core features such as prayer schedules, Qibla direction, Quran reading, dhikr counters, and saved preferences.</li>
+                        <li>Send notifications and reminders you explicitly enable (e.g., daily prayer alerts, Surah Mulk reminder).</li>
+                        <li>Store settings locally so the app feels personalized each time you return.</li>
+                        <li>Analyze performance, troubleshoot crashes, and improve reliability.</li>
+                        <li>Provide customer support, answer questions, and resolve technical issues.</li>
+                        <li>Meet legal obligations, enforce our terms, and prevent misuse or fraud.</li>
+                    </ul>
+                    <p><strong>We do not use your data for targeted advertising.</strong></p>
+
+                    <div class="section-divider"></div>
+
+                    <!-- Legal Bases -->
+                    <h2><i class="fas fa-balance-scale"></i> Legal Bases for Processing (EEA/UK)</h2>
+                    <p>Where GDPR or UK GDPR applies, we rely on:</p>
+                    <ul>
+                        <li><strong>Consent</strong> — for optional permissions like location, notifications, analytics, and calendar access.</li>
+                        <li><strong>Performance of a contract/service</strong> — to supply the features you request.</li>
+                        <li><strong>Legitimate interests</strong> — to analyze usage, improve security, and enhance the app in a way that respects your rights.</li>
+                        <li><strong>Legal obligations</strong> — to comply with applicable laws, court orders, or regulatory requirements.</li>
+                    </ul>
+                    <p>You can withdraw consent at any time through device settings or by contacting us.</p>
+
+                    <div class="section-divider"></div>
+
+                    <!-- Sharing & Third-Party -->
+                    <h2><i class="fas fa-share-alt"></i> Sharing & Third-Party Processing</h2>
+                    <p>We do not sell personal data. We work with processors who help operate Qalby Muslim under strict data protection agreements, for example:</p>
+                    <ul>
+                        <li><strong>Prayer time APIs:</strong> Aladhan, to fetch accurate schedules.</li>
+                        <li><strong>Push notification services:</strong> Expo Notifications/EAS, Apple APNs, Google FCM.</li>
+                        <li><strong>Hosting & infrastructure:</strong> Platforms such as Hostinger for web content and storage.</li>
+                        <li><strong>Analytics & crash reporting:</strong> Firebase Analytics, Sentry, or similar tools (enabled only with consent where required).</li>
+                        <li><strong>Geolocation services:</strong> Providers that convert coordinates into place names when you request it.</li>
+                    </ul>
+
+                    <h3>Third-Party Endpoints in This Build</h3>
+                    <ul>
+                        <li><strong>api.aladhan.com</strong> — used to compute prayer times for provided coordinates.</li>
+                        <li><strong>nominatim.openstreetmap.org</strong> — used for reverse geocoding to display a friendly place name.</li>
+                        <li><strong>worldtimeapi.org</strong> — used to fetch timezone/date information the app uses for display.</li>
+                        <li><strong>donate.stripe.com / stripe.com</strong> — donation payment processing via an external Stripe link.</li>
+                        <li><strong>Expo Notifications / Apple APNs / Google FCM</strong> — push delivery providers handle push tokens for notification delivery.</li>
+                    </ul>
+
+                    <p>If data leaves your country or the EEA/UK, we use appropriate safeguards (e.g., Standard Contractual Clauses or adequacy decisions).</p>
+
+                    <div class="section-divider"></div>
+
+                    <!-- Storage & Retention -->
+                    <h2><i class="fas fa-save"></i> Storage & Retention</h2>
+                    <ul>
+                        <li><strong>On-device storage:</strong> Preferences, bookmarks, and cached data remain on your device until you clear them or uninstall the app.</li>
+                        <li><strong>Notification tokens:</strong> Retained while notifications stay enabled; they typically expire when you uninstall the app or disable notifications.</li>
+                        <li><strong>Support messages:</strong> Kept only as long as necessary to resolve your inquiry and up to 24 months afterward unless you request earlier deletion.</li>
+                        <li><strong>Analytics/crash data:</strong> Stored in aggregated or anonymized form, generally for 12–36 months depending on the provider.</li>
+                        <li><strong>Backups:</strong> Any backups follow the same retention windows and are purged on schedule.</li>
+                    </ul>
+                    <p>We delete or anonymize personal data when it is no longer needed or when you request deletion, subject to legal requirements.</p>
+
+                    <div class="section-divider"></div>
+
+                    <!-- Your Rights -->
+                    <h2><i class="fas fa-user-shield"></i> Your Rights & Choices</h2>
+
+                    <h3>Manage Device Permissions</h3>
+                    <ul>
+                        <li><strong>Location & notifications:</strong> Adjust or revoke access via device settings.</li>
+                        <li><strong>Calendar access:</strong> Decline permission; the app will not create calendar events without your approval.</li>
+                    </ul>
+
+                    <h3>Analytics & Tracking Controls</h3>
+                    <p>Where required by law, we seek in-app consent for analytics. You can opt out later in the app or by contacting us.</p>
+
+                    <h3>Data Access, Correction & Deletion</h3>
+                    <ul>
+                        <li>Email <span class="highlight">qalbymuslim1@gmail.com</span> with the subject "Privacy Request — [Access|Deletion|Other]".</li>
+                        <li>Include your name, the email tied to your device (if any), your country of residence, and a brief summary of the request.</li>
+                        <li>We verify identity where necessary and respond within applicable timelines (typically 30 days).</li>
+                    </ul>
+
+                    <h3>GDPR (EEA/UK) Rights</h3>
+                    <p>Rights include access, correction, deletion, restriction, objection, portability, and challenges to automated decision-making. Contact us to exercise these rights.</p>
+
+                    <h3>CCPA/CPRA (California) Rights</h3>
+                    <p>California residents may request details about collected information, request deletion, and confirm we do not sell personal data. Initiate requests using the instructions above.</p>
+
+                    <div class="section-divider"></div>
+
+                    <!-- Children's Privacy -->
+                    <h2><i class="fas fa-child"></i> Children's Privacy</h2>
+                    <p>Qalby Muslim is not directed to children under 13. We do not knowingly collect personal data from children under 13. If you believe your child has provided information to us, contact us and we will delete it promptly.</p>
+
+                    <div class="section-divider"></div>
+
+                    <!-- International Transfers -->
+                    <h2><i class="fas fa-globe"></i> International Transfers</h2>
+                    <p>Your data may be processed in countries other than where you reside (for example, the United States, Canada, or EU member states). When transfers occur, we rely on lawful mechanisms that provide appropriate safeguards.</p>
+
+                    <div class="section-divider"></div>
+
+                    <!-- Security -->
+                    <h2><i class="fas fa-lock"></i> Information Security</h2>
+                    <p>We implement reasonable technical, administrative, and physical safeguards to protect your information. No system is completely secure, so please notify us at <span class="highlight">qalbymuslim1@gmail.com</span> immediately if you suspect an issue.</p>
+
+                    <div class="section-divider"></div>
+
+                    <!-- Changes -->
+                    <h2><i class="fas fa-refresh"></i> Changes to This Policy</h2>
+                    <p>We may update this Privacy Policy to reflect changes in our practices, technologies, or legal obligations. When we do, we update the "Last updated" date above. For material changes, we will provide an in-app notice or other reasonable communication where feasible.</p>
+
+                    <div class="section-divider"></div>
+
+                    <!-- Contact -->
+                    <div class="contact-card">
+                        <h3><i class="fas fa-envelope"></i> Contact Us</h3>
+                        <p>If you have questions about this Privacy Policy or wish to exercise your privacy rights, contact us:</p>
+                        <p style="margin: 20px 0;">
+                            <strong>Email:</strong> <a href="mailto:qalbymuslim1@gmail.com">qalbymuslim1@gmail.com</a><br>
+                            <strong>Subject:</strong> "Privacy Request — [Access|Deletion|Other]"<br>
+                            <strong>Website:</strong> <a href="https://qalbymuslim.com/privacy-policy">https://qalbymuslim.com/privacy-policy</a>
+                        </p>
+                        <p style="margin-top: 20px; color: var(--text-secondary);">We aim to acknowledge and respond to all legitimate requests within 30 days.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
