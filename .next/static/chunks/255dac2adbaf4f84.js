@@ -1,0 +1,1 @@
+(globalThis.TURBOPACK||(globalThis.TURBOPACK=[])).push(["object"==typeof document?document.currentScript:void 0,11249,e=>{e.v("/_next/static/media/iphone-14-frame.4c065ad2.png")}]);

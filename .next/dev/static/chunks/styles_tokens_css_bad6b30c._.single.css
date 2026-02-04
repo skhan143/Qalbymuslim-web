@@ -1,0 +1,25 @@
+/* [project]/styles/tokens.css [app-client] (css) */
+:root {
+  --color-emerald: #064e3b;
+  --color-sand: #f5f5f4;
+  --color-gold: #d4af37;
+}
+
+.text-gradient-gold {
+  background: linear-gradient(135deg, gold, #d4af37, orange);
+  -webkit-text-fill-color: transparent;
+  letter-spacing: -.5px;
+  -webkit-background-clip: text;
+  font-weight: 700;
+}
+
+.text-gold {
+  color: #d4af37;
+  font-weight: 700;
+}
+
+.bg-emerald-soft {
+  background: radial-gradient(900px 320px at 50% 0, #064e3b1f, #0000);
+}
+
+/*# sourceMappingURL=styles_tokens_css_bad6b30c._.single.css.map*/

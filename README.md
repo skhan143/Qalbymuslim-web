@@ -1,3 +1,29 @@
+# QalbyMuslim Landing (Next.js 14 + Tailwind + Framer Motion)
+
+A premium, scroll-driven landing experience inspired by anywherebi.com, crafted for spiritual wellness. This lives alongside your existing static site in the same folder.
+
+## Run (Next.js app)
+```powershell
+npm install
+npm run dev
+```
+Open http://localhost:3000
+
+## Build (Next.js app)
+```powershell
+npm run build
+npm run start
+```
+
+## Assets for Hero Device
+Place binary assets under `public/assets/` so Next.js can serve them:
+- `public/assets/hero-video.mp4`
+- `public/assets/hero-poster.svg`
+- `public/assets/iphone-14-frame.png`
+Update paths if you use different filenames.
+
+---
+
 # Qalby Muslim - Islamic Companion Web Application
 
 A modern, dashboard-style web application for Islamic prayer times, Quran reading, and spiritual guidance. This web interface complements the [Qalby Muslim mobile app](https://apps.apple.com/ua/app/qalby-muslim/id6753021182).

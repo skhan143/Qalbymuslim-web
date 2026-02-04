@@ -1,0 +1,22 @@
+:root {
+  --color-emerald: #064E3B;
+  --color-sand: #F5F5F4;
+  --color-gold: #D4AF37;
+}
+
+.text-gradient-gold {
+  background: linear-gradient(135deg, #FFD700, #D4AF37, #FFA500);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.text-gold {
+  color: #D4AF37;
+  font-weight: 700;
+}
+
+.bg-emerald-soft {
+  background: radial-gradient(900px 320px at 50% 0%, rgba(6,78,59,0.12), transparent);
+}

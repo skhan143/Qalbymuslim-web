@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 1, "column": 0}, "map": {"version":3,"sources":["turbopack:///[project]/styles/tokens.css"],"sourcesContent":[":root {\r\n  --color-emerald: #064E3B;\r\n  --color-sand: #F5F5F4;\r\n  --color-gold: #D4AF37;\r\n}\r\n\r\n.text-gradient-gold {\r\n  background: linear-gradient(135deg, #FFD700, #D4AF37, #FFA500);\r\n  -webkit-background-clip: text;\r\n  -webkit-text-fill-color: transparent;\r\n  font-weight: 700;\r\n  letter-spacing: -0.5px;\r\n}\r\n\r\n.text-gold {\r\n  color: #D4AF37;\r\n  font-weight: 700;\r\n}\r\n\r\n.bg-emerald-soft {\r\n  background: radial-gradient(900px 320px at 50% 0%, rgba(6,78,59,0.12), transparent);\r\n}\r\n"],"names":[],"mappings":"AAAA;;;;;;AAMA;;;;;;;;AAQA;;;;;AAKA"}}]
+}
